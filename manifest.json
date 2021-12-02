@@ -1,0 +1,159 @@
+{
+    "commerceSuiteVersion": "1905",
+    "useCloudExtensionPack": true,
+    "extensions": [
+    "pcmbackofficesamplesaddon",
+    "acceleratorwebservicesaddon",
+    "personalizationsampledataaddon",
+    "personalizationsearchsamplesaddon",
+    "smarteditaddon"
+    ],
+   "useConfig": {
+        "properties": [
+            {
+                "location": "/config/local.properties"
+            }
+        ],
+        "extensions": {
+            "location": "/config/localextensions.xml"
+        },
+        "solr": {
+            "location": "/config/solr"
+        },
+        "languages" : {
+    "location": "/config/languages"
+}
+    },
+    "storefrontAddons": [
+      {
+    "addon": "pcmbackofficesamplesaddon",
+    "storefront": "yacceleratorstorefront",
+    "template": "yacceleratorstorefront"
+},
+        {
+            "addon": "acceleratorwebservicesaddon",
+            "storefront": "yacceleratorstorefront",
+            "template": "yacceleratorstorefront"
+        },
+        {
+            "addon": "personalizationsampledataaddon",
+            "storefront": "yacceleratorstorefront",
+            "template": "yacceleratorstorefront"
+        },
+        {
+            "addon": "personalizationsearchsamplesaddon",
+            "storefront": "yacceleratorstorefront",
+            "template": "yacceleratorstorefront"
+        },
+        {
+            "addon": "smarteditaddon",
+            "storefront": "yacceleratorstorefront",
+            "template": "yacceleratorstorefront"
+        }
+    ],
+    "properties": [
+    {
+        "key": "lang.packs",
+        "value": "de,en,es,es_CO,fr,it,ja,ko,pt,ru,zh,zh_TW,hi,id,cs,cy"
+    }
+    ],
+    "aspects": [
+        {
+            "name": "backoffice",
+            "properties": [
+                {
+                   "key":"xss.filter.header.X-Frame-Options",
+                   "value":""
+                }
+            ],
+            "webapps": [
+                {
+                    "name": "backoffice",
+                    "contextPath": "/backoffice"
+                },
+                {
+                    "name": "hac",
+                    "contextPath": "/hac"
+                },
+                {
+                    "name": "smartedit",
+                    "contextPath": "/smartedit"
+                }
+            ]
+        },
+        {
+            "name": "accstorefront",
+            "properties": [
+                {
+                    "key": "storefrontContextRoot",
+                    "value": ""
+                }
+            ],
+            "webapps": [
+                {
+                    "name": "mediaweb",
+                    "contextPath": "/medias"
+                },
+                {
+                    "name": "yacceleratorstorefront",
+                    "contextPath": ""
+                },
+                {
+                    "name": "acceleratorservices",
+                    "contextPath": "/acceleratorservices"
+                }
+            ]
+        },
+        {
+            "name": "backgroundProcessing",
+            "properties": [
+                {
+                    "key": "cluster.node.groups",
+                    "value": "integration,yHotfolderCandidate"
+                },
+                {
+                    "key": "azure.hotfolder.storage.polling.fixed.rate",
+                    "value": "60000"
+                }
+
+            ],
+            "webapps": [
+                {
+                    "name": "hac",
+                    "contextPath": ""
+                },
+                {
+                    "name": "mediaweb",
+                    "contextPath": "/medias"
+                }
+            ]
+        },
+        {
+            "name": "api",
+            "properties": [
+                    {
+                        "key":"xss.filter.header.X-Frame-Options",
+                        "value":""
+                    }
+            ],
+            "webapps": [
+                {
+                    "name": "ycommercewebservices",
+                    "contextPath": "/rest"
+                },
+                {
+                    "name": "oauth2",
+                    "contextPath": "/authorizationserver"
+                },
+                {
+                    "name": "cmswebservices",
+                    "contextPath": "/cmswebservices"
+                },
+                {
+                    "name": "permissionswebservices",
+                    "contextPath": "/permissionswebservices"
+                }
+            ]
+        }
+    ]
+}
